@@ -143,23 +143,25 @@ h2 {
         font-size: 1.5em;
     }
 
-    /* Susun butang dalam container */
+    /* Pastikan butang dalam 1 baris */
     .buttons {
         display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%; /* Pastikan butang ikut lebar container */
+        flex-direction: row; /* Susun butang dalam 1 baris */
+        justify-content: space-between; /* Pastikan ada jarak antara butang */
+        width: 100%;
     }
 
     .buttons button, .buttons a {
-        width: 100%; /* Pastikan butang ikut saiz container */
-        max-width: none; /* Tiada had maksimum */
-        padding: 12px;
-        font-size: 1em;
+        flex: 1; /* Bahagi ruang sama rata */
+        max-width: 33%; /* Hadkan setiap butang supaya sama besar */
+        padding: 10px;
+        font-size: 0.9em;
+        text-align: center;
     }
 
     .buttons img {
         width: 20px;
+        height: auto;
     }
 
     .popup {
