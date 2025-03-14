@@ -100,6 +100,10 @@ h2 {
     z-index: 999;
 }
 
+.popup-overlay, .popup {
+    display: none; /* Sembunyikan popup awal-awal */
+}
+
 .popup {
     display: none; /* Popup hanya keluar bila butang ditekan */
     position: fixed;
