@@ -14,4 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
         popupOverlay.style.display = "none";
         locationPopup.style.display = "none";
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    var audio = document.getElementById("myAudio");
+    var button = document.getElementById("toggleMusic");
+
+    button.addEventListener("click", function () {
+        if (audio.paused) {
+            audio.play();
+            button.textContent = "⏸"; // Tukar ikon ke pause
+        } else {
+            audio.pause();
+            button.textContent = "▶"; // Tukar ikon ke play
+        }
+    });
+});
 });
