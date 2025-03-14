@@ -127,3 +127,39 @@ h2 {
 .popup button:hover {
     background-color: #cc0000;
 }
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        max-width: none;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buttons button, .buttons a {
+        width: 100%;
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    .buttons img {
+        width: 20px;
+    }
+
+    .popup {
+        width: 90%;
+        max-width: 300px;
+    }
+}
