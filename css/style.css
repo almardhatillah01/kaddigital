@@ -143,24 +143,31 @@ h2 {
         font-size: 1.5em;
     }
 
-    /* Pastikan butang dalam 1 baris */
+    /* Susun 3 butang dalam 1 baris */
     .buttons {
         display: flex;
-        flex-direction: row; /* Susun butang dalam 1 baris */
-        justify-content: space-between; /* Pastikan ada jarak antara butang */
+        flex-direction: row; /* Pastikan dalam 1 baris */
+        justify-content: space-evenly; /* Pastikan jarak antara butang sama */
+        align-items: center; /* Pusatkan butang secara vertikal */
         width: 100%;
+        gap: 5px; /* Jarak kecil antara butang */
     }
 
     .buttons button, .buttons a {
-        flex: 1; /* Bahagi ruang sama rata */
-        max-width: 33%; /* Hadkan setiap butang supaya sama besar */
+        flex: 1; /* Setiap butang bahagikan ruang sama rata */
+        max-width: 32%; /* Pastikan setiap butang tak terlalu besar */
         padding: 10px;
         font-size: 0.9em;
         text-align: center;
+        display: flex;
+        flex-direction: column; /* Letakkan ikon di atas teks */
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
     }
 
     .buttons img {
-        width: 20px;
+        width: 24px;
         height: auto;
     }
 
@@ -169,4 +176,3 @@ h2 {
         max-width: 300px;
     }
 }
-
