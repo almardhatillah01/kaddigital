@@ -41,138 +41,50 @@ h2 {
 }
 .buttons {
     display: flex;
-    justify-content: space-between; /* Susun dalam satu baris */
-    width: 100%; /* Lebar penuh */
-    margin-top: 20px;
+    justify-content: space-between; /* Pastikan ada jarak antara butang */
+    align-items: center; /* Pusatkan secara vertikal */
+    width: 100%;
 }
 
 .buttons button, .buttons a {
-    flex: 1; /* Bahagi sama rata */
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
+    flex: 1; /* Bahagikan ruang sama rata */
+    max-width: 30%; /* Pastikan setiap butang tak terlalu besar */
+    padding: 10px;
+    font-size: 0.9em;
+    text-align: center;
     display: flex;
+    flex-direction: column; /* Letakkan ikon di atas teks */
     align-items: center;
     justify-content: center;
     gap: 5px;
-    text-decoration: none;
-    margin: 0 5px; /* Jarak antara butang */
-}
-
-.buttons button img, .buttons a img {
-    width: 25px; /* Saiz ikon */
-    height: auto;
-}
-
-.buttons button:hover, .buttons a:hover {
-    background-color: #0056b3;
-}
-.popup-overlay {
-    display: none; /* Pastikan popup tidak keluar automatik */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
-
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 350px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    z-index: 1000;
-}
-
-.popup p {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.popup a {
-    display: inline-block;
-    margin: 5px;
-}
-
-.popup img {
-    width: 50px;  /* Ikon lebih kecil */
-    height: auto;
-    display: block;
-    margin: 0 auto;  /* Pastikan ikon center */
-}
-
-.popup button {
-    margin-top: 15px;
-    padding: 8px 15px;
-    background-color: #ff4d4d;
-    color: white;
     border: none;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
 }
 
-.popup button:hover {
-    background-color: #cc0000;
+.buttons img {
+    width: 24px;
+    height: auto;
 }
 
+/* Pastikan dalam skrin kecil, butang tetap dalam 1 baris */
 @media screen and (max-width: 600px) {
-    .container {
-        width: 90%;
-        max-width: none;
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-
-    /* Susun 3 butang dalam 1 baris */
     .buttons {
         display: flex;
-        flex-direction: row; /* Pastikan dalam 1 baris */
-        justify-content: space-evenly; /* Pastikan jarak antara butang sama */
-        align-items: center; /* Pusatkan butang secara vertikal */
+        flex-wrap: nowrap; /* Jangan biar butang turun ke bawah */
+        justify-content: space-around;
         width: 100%;
-        gap: 5px; /* Jarak kecil antara butang */
     }
 
     .buttons button, .buttons a {
-        flex: 1; /* Setiap butang bahagikan ruang sama rata */
-        max-width: 32%; /* Pastikan setiap butang tak terlalu besar */
-        padding: 10px;
-        font-size: 0.9em;
-        text-align: center;
-        display: flex;
-        flex-direction: column; /* Letakkan ikon di atas teks */
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
+        max-width: 30%;
+        font-size: 0.8em;
+        padding: 8px;
     }
 
     .buttons img {
-        width: 24px;
-        height: auto;
-    }
-
-    .popup {
-        width: 90%;
-        max-width: 300px;
+        width: 20px;
     }
 }
