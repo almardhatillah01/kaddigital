@@ -143,18 +143,17 @@ h2 {
         font-size: 1.5em;
     }
 
-    /* Pastikan butang tidak keluar dari container */
+    /* Susun butang dalam container */
     .buttons {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        align-items: center; /* Pusatkan butang */
-        width: 100%;
+        width: 100%; /* Pastikan butang ikut lebar container */
     }
 
     .buttons button, .buttons a {
-        width: 90%; /* Pastikan butang tak keluar dari container */
-        max-width: 250px; /* Hadkan saiz butang */
+        width: 100%; /* Pastikan butang ikut saiz container */
+        max-width: none; /* Tiada had maksimum */
         padding: 12px;
         font-size: 1em;
     }
