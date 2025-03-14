@@ -42,4 +42,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+    document.addEventListener("DOMContentLoaded", function () {
+    const overlayPage = document.getElementById("overlayPage");
+    const btnBuka = document.getElementById("btnBuka");
+
+    btnBuka.addEventListener("click", function () {
+        overlayPage.style.display = "none"; // Hilangkan overlay
+    });
+});
 });
