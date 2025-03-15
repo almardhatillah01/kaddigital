@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (btnLokasi && popupOverlay && locationPopup) {
         btnLokasi.addEventListener("click", function () {
-            popupOverlay.style.display = "block";
-            locationPopup.style.display = "block";
+            popupOverlay.classList.add("show");
+            locationPopup.classList.add("show");
         });
 
         popupOverlay.addEventListener("click", function () {
-            popupOverlay.style.display = "none";
-            locationPopup.style.display = "none";
+            popupOverlay.classList.remove("show");
+            locationPopup.classList.remove("show");
         });
     }
 
@@ -57,7 +57,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (overlayPage && btnBuka) {
         btnBuka.addEventListener("click", function () {
-            overlayPage.style.display = "none"; // Hilangkan overlay
+            overlayPage.classList.add("fade-out"); // Tambah efek fade-out
+
+            setTimeout(() => {
+                overlayPage.style.display = "none"; // Hilangkan selepas animasi
+            }, 500);
+        });
+    }
+
+    // ========================
+    // 4. Popup Telefon
+    // ========================
+    const btnTelefon = document.getElementById("btnTelefon");
+    const popupOverlayPhone = document.getElementById("popupOverlayPhone");
+    const phonePopup = document.getElementById("phonePopup");
+
+    if (btnTelefon && popupOverlayPhone && phonePopup) {
+        btnTelefon.addEventListener("click", function () {
+            popupOverlayPhone.classList.add("show");
+            phonePopup.classList.add("show");
+        });
+
+        popupOverlayPhone.addEventListener("click", function () {
+            popupOverlayPhone.classList.remove("show");
+            phonePopup.classList.remove("show");
         });
     }
 });
