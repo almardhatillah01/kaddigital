@@ -63,7 +63,7 @@ h2 {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    
+
 }
 
 .buttons img {
@@ -310,4 +310,42 @@ h2 {
 .contact-list a img {
     width: 25px;
     height: auto;
+}
+
+.typing::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.shake {
+    display: inline-block;
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#prankText {
+    font-size: 24px; /* Besarkan teks efek menaip */
+    font-weight: bold;
+}
+
+#shakeText {
+    font-size: 28px; /* Lebih besar untuk teks goyang */
+    font-weight: bold;
+    color: red; /* Tukar warna supaya lebih jelas */
 }
