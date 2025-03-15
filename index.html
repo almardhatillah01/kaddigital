@@ -20,16 +20,20 @@
     </div>
 </div>
     <div class="container">
+
         <h1>Walimatur Urus</h1>
+
         <div class="name-layout">
             <span class="radhi">Radhi</span>
-            <span class="dan">Dan</span>
+            <span class="dan">&</span>
             <span class="akma">Akma</span>
         </div>
         
-        <div class="event-date">Jumaat,</div>
-        <div class="event-date">2 Mei 2025</div>
-        <div class="event-time">10:00 AM - 5:00 PM</div>
+        <div class="event-group">
+            <div class="event-date">Jumaat,</div>
+            <div class="event-date">2 Mei 2025</div>
+            <div class="event-time">10:00 AM - 5:00 PM</div>
+        </div>
         
         <div class="line"></div>
         <h3>Assalamualaikum W.B.T</h3>
@@ -53,9 +57,9 @@
             <button id="btnKehadiran">
                 <img src="images/family.png" alt="Kehadiran"> Kehadiran
             </button>
-            <a href="tel:+60123456789" class="button">
+            <button id="btnTelefon">
                 <img src="images/telefon.png" alt="Telefon"> Telefon
-            </a>
+            </button>
             <button id="btnLokasi">
                 <img src="images/lokasi.png" alt="Lokasi"> Lokasi
             </button>
@@ -65,13 +69,37 @@
 <div class="popup-overlay" id="popupOverlay"></div>
 <div class="popup" id="locationPopup">
     <p>Pilih Aplikasi Peta:</p>
-    <a href="https://goo.gl/maps/example" target="_blank">
+    <a href="https://maps.app.goo.gl/qZJaMDYhyABw8WyBA" target="_blank">
         <img src="images/google_maps.png" alt="Google Maps">
     </a>
-    <a href="https://waze.com/ul?ll=example" target="_blank">
+    <a href="https://ul.waze.com/ul?ll=3.37232829%2C101.61530614&navigate=yes&zoom=17&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank">
         <img src="images/waze.png" alt="Waze">
     </a>
 </div>
+
+<!-- Popup Overlay untuk Telefon -->
+<div class="popup-overlay" id="popupOverlayPhone"></div>
+
+<!-- Popup Telefon -->
+<div class="popup" id="phonePopup">
+    <p>Hubungi melalui WhatsApp:</p>
+    <div class="contact-list">
+        <a href="https://wa.me/601224100678" target="_blank">
+            <img src="images/whatsapp.png" alt="WhatsApp"> Hanafi - 012-24100678
+        </a>
+        <a href="https://wa.me/60123456789" target="_blank">
+            <img src="images/whatsapp.png" alt="WhatsApp"> Nazri - 012-3456789
+        </a>
+        <a href="https://wa.me/601234567897" target="_blank">
+            <img src="images/whatsapp.png" alt="WhatsApp"> Iwan - 012-34567897
+        </a>
+        <a href="https://wa.me/6013245789" target="_blank">
+            <img src="images/whatsapp.png" alt="WhatsApp"> Iqram - 013-245789
+        </a>
+    </div>
+</div>
+
+
 
 <audio id="myAudio" autoplay loop>
     <source src="Kompang Dipalu.mp3" type="audio/mpeg">
