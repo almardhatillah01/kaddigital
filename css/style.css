@@ -22,10 +22,10 @@ body {
 }
 h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: 2.5em;
-    color: pink;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    -webkit-text-stroke: 0.1px black;
+    font-size: 5em;
+    color: #ae0042;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Outline putih lembut */
     text-transform: capitalize;
 }
 h2 {
@@ -44,6 +44,7 @@ h2 {
     justify-content: space-between; /* Pastikan ada jarak antara butang */
     align-items: center; /* Pusatkan secara vertikal */
     width: 100%;
+    transition: 0.3s;
 }
 
 .buttons button, .buttons a {
@@ -62,6 +63,7 @@ h2 {
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    
 }
 
 .buttons img {
@@ -73,7 +75,7 @@ h2 {
 @media screen and (max-width: 600px) {
     .buttons {
         display: flex;
-        flex-wrap: nowrap; /* Jangan biar butang turun ke bawah */
+        flex-wrap: nowrap;
         justify-content: space-around;
         width: 100%;
     }
@@ -90,7 +92,7 @@ h2 {
 }
 
 .popup-overlay {
-    display: none; /* Popup tak keluar automatik */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -100,16 +102,14 @@ h2 {
     z-index: 999;
 }
 
-.popup-overlay, .popup {
-    display: none; /* Sembunyikan popup awal-awal */
-}
-
 .popup {
-    display: none; /* Popup hanya keluar bila butang ditekan */
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 80%;
     max-width: 350px;
     background: rgba(255, 255, 255, 0.9);
@@ -117,6 +117,16 @@ h2 {
     border-radius: 10px;
     text-align: center;
     z-index: 1000;
+}
+
+.popup.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-overlay.show {
+    display: block;
 }
 
 .popup p {
@@ -130,10 +140,10 @@ h2 {
 }
 
 .popup img {
-    width: 50px;  /* Ikon lebih kecil */
+    width: 50px;
     height: auto;
     display: block;
-    margin: 0 auto;  /* Pastikan ikon center */
+    margin: 0 auto;
 }
 
 .popup button {
@@ -144,6 +154,7 @@ h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 .popup button:hover {
@@ -175,7 +186,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #FFC0CB; /* Pink Lembut */
+    background: #FFC0CB;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -184,7 +195,16 @@ h2 {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     z-index: 9999;
+    opacity: 1; /* Mula dengan penuh opacity */
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
+#overlayPage.fade-out {
+    opacity: 0;
+    transform: scale(1.1); /* Tambah efek zoom out sikit */
+    pointer-events: none;
+}
+
 
 /* Teks Radhi & Akma */
 #overlayPage h1 {
@@ -208,4 +228,86 @@ h2 {
 #overlayPage button:hover {
     background: gray;
     color: white;
+}
+
+.name-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
+    font-weight: bold;
+    color: #dc0265;
+    height: 120px; /* Pastikan cukup ruang */
+    margin-top: 60px; /* Jarak lebih jauh ke bawah */
+}
+
+.radhi {
+    position: absolute;
+    top: -40%;
+    left: 5%;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.dan {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.akma {
+    position: absolute;
+    bottom: -40%;
+    right: 5%;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.event-date,
+.event-time {
+    font-size: 2em; /* Besarkan teks */
+    margin-top: 0px; /* Jarak ke bawah */
+    font-weight: bold;
+    font-family: "Arial Narrow", Arial, sans-serif; /* Guna Arial Narrow */
+}
+
+.event-group {
+    margin-top: 40px; /* Jarak lebih jauh ke bawah */
+    text-align: center;
+}
+
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.contact-list a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.contact-list a:hover {
+    background: #1da851;
+}
+
+.contact-list a img {
+    width: 25px;
+    height: auto;
 }
