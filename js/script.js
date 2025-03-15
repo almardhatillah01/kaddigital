@@ -83,4 +83,34 @@ document.addEventListener("DOMContentLoaded", function () {
             phonePopup.classList.remove("show");
         });
     }
+
+    // ========================
+    // 5. Efek Menaip & Sound Effect "Toing!"
+    // ========================
+    const prankText = document.getElementById("prankText");
+    const shakeText = document.getElementById("shakeText");
+    const soundEffect = new Audio("Toing.mp3"); // Load sound effect
+
+    if (prankText && shakeText) {
+        const text = "Anda di prankkkk 😂";  
+        let index = 0;
+
+        function typeEffect() {
+            if (index < text.length) {
+                prankText.innerHTML += text[index];
+                index++;
+                setTimeout(typeEffect, 100);
+            } else {
+                // Bila habis taip, tunjuk teks goyang selepas 1 saat
+                setTimeout(() => {
+                    shakeText.classList.remove("hidden");
+
+                    // Mainkan sound effect selepas teks muncul
+                    soundEffect.play();
+                }, 1000);
+            }
+        }
+
+        typeEffect();
+    }
 });
