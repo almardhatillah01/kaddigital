@@ -114,3 +114,22 @@ document.addEventListener("DOMContentLoaded", function () {
         typeEffect();
     }
 });
+
+ let scrolling = true;
+
+function autoScroll() { 
+    if (scrolling) { 
+        window.scrollBy(0, 2); // Scroll ke bawah perlahan 
+        setTimeout(autoScroll, 10); // Ulangi setiap 10ms 
+    } 
+}
+
+document.addEventListener("DOMContentLoaded", () => { 
+    autoScroll(); 
+});
+
+document.addEventListener("click", () => { 
+    scrolling = false; // Berhenti scrolling bila diklik 
+});
+
+                                          
