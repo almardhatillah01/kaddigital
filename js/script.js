@@ -115,21 +115,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
- let scrolling = true;
 
-function autoScroll() { 
-    if (scrolling) { 
-        window.scrollBy(0, 2); // Scroll ke bawah perlahan 
-        setTimeout(autoScroll, 10); // Ulangi setiap 10ms 
-    } 
+//Auto scroll 
+let scrolling = true;
+
+function autoScroll() {
+    if (scrolling) {
+        window.scrollBy(0, 2); // Scroll ke bawah perlahan
+        if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+            scrolling = false; // Henti bila sampai bawah
+        } else {
+            setTimeout(autoScroll, 10); // Ulangi setiap 10ms
+        }
+    }
 }
 
-document.addEventListener("DOMContentLoaded", () => { 
-    autoScroll(); 
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(autoScroll, 1000); // Tunggu 1s sebelum mula scrolling
 });
 
-document.addEventListener("click", () => { 
-    scrolling = false; // Berhenti scrolling bila diklik 
+document.addEventListener("click", () => {
+    scrolling = false; // Berhenti scrolling bila diklik
 });
-
-                                          
